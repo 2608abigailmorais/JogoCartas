@@ -1,0 +1,34 @@
+JOGO DE CARTAS SIMPLES
+
+Monte um sistema básico de Jogo de Cartas de Usuário x Computador. O usuário irá informar seu nome (input text), naipe que deseja jogar (radio) ou seja, ouros, copas, paus e espadas, bem como quantas cartas deseja sortear (select), sendo que o número mínimo de cartas 2 e máximo são 6 cartas. 
+Nome, naipe e quantidade de cartas devem ser preenchidos para que o usuário possa continuar o jogo clicando no botão sortear cartas. As cartas geradas para o jogador adversário, no caso o computador, devem ser de qualquer naipe menos o escolhido pelo usuário. 
+Ao clicar no botão sortear cartas, as cartas do usuário devem aparecer na tela como imagem de cartas e não somente os números que foram selecionados. Assim o usuário pode ter dois fluxos desse ponto em diante:
+Clicar novamente no botão sortear e novas cartas irão aparecer para o usuário, o usuário poderá gerar novas cartas sempre que clicar no botão sortear;
+Ou clicar no botão jogar;
+O botão jogar deve utilizar para o Jogo as cartas que já foram apresentadas para o usuário e apresentar as cartas que foram geradas para o jogador Computador, lembrando que para cada jogador as cartas não podem ser repetidas, exemplo Usuário não deve ter duas cartas A, e Computador não deve ter duas cartas J. Ao clicar no botão jogar então são apresentadas no Sistema as cartas do Usuário e sua somatória, as cartas do Adversário (Computador) e sua somatória e a mensagem contendo o nome do vencedor (Computador ou Nome que o usuário informou no input) ou a mensagem de Empate. As cartas (imagens) tanto para o usuário quanto para o computador devem ser apresentadas em ordem crescente.
+Ganha quem tiver a maior soma dos valores das cartas sorteadas.
+Usar a sequência abaixo para a numeração das cartas, onde:
+A = 1
+J = 11
+Q = 12
+K = 13
+As demais cartas seguem seu próprio valor de numeração 2 à 10.
+
+Requisitos do Sistema:
+Utilizar uma função para gerar os números sorteados das cartas;
+Utilizar função para somar as cartas de usuário e computador;
+Utilizar vetor ou matriz para armazenar o números das cartas geradas;
+Cartas devem ser apresentadas como imagens;
+Texto quando o vencedor é o computador deve ser apresentado em vermelho (css externo);
+Texto quando o vencedor é o usuário deve ser apresentado em azul (css externo);
+Texto quando tiver um empate deve ser apresentado em verde (css externo);
+Página principal do projeto com o nome index.php;
+Todas as funções utilizadas no projeto devem estar em um mesmo arquivo PHP que não deve ser o index.php;
+
+Requisitos do git:
+Ter pelo menos uma branch diferente da master/main;
+Ter pelo menos 5 commits com título e descrição;
+Ter pelo menos uma merge;
+Ter pelo menos uma tag;
+
+Observação: Qualquer tipo de plágio (parcial ou total) os alunos envolvidos terão nota igual a zero na atividade;
