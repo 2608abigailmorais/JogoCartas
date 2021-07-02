@@ -193,60 +193,15 @@ function mostrarCartas($cartas,$naipe){
     echo "</tr></table>"; 
 }
 
-function somar($cartas, $num, $h1, $h2, $h3, $h4, $h5, $h6){
- if ($num == 2) {
-    $totalJ = $h1 + $h2 -1;
-    echo "$totalJ";
-}
-    if ($num == 3) {
-      $totalJ = $h1 + $h2 + $h3 -1;
-      echo "$totalJ";
-}  
-    if ($num == 4) {
-      $totalJ = $h1 + $h2 + $h3 + $h4 -1;
-      echo "$totalJ";
-}
-  if ($num == 5) {
-    $totalJ = $h1 + $h2 + $h3 + $h4 + $h5 -1;
-    echo "$totalJ";
-}
-  if ($num == 6) {
-    $totalJ = $h1 + $h2 + $h3 + $h4 + $h5 + $h6 -1;
-    echo "$totalJ";
-}
+function somar($h1, $h2, $h3, $h4, $h5, $h6){
+    $totalJ = $h1 + $h2 + $h3 + $h4 + $h5 + $h6;
+    echo "$totalJ<br>";
 } 
 
-function somarp($cartasp, $num, $p1, $p2, $p3, $p4, $p5, $p6){
- if ($num == 2) {
-    $totalP = $p1 + $p2 -1;
+function somarp($p1, $p2, $p3, $p4, $p5, $p6){
+    $totalP = $p1 + $p2 + $p3 + $p4 + $p5 + $p6;
     echo "$totalP";
 }
-    if ($num == 3) {
-      $totalP = $p1 + $p2 + $p3 -1;
-      echo "$totalP";
-}  
-    if ($num == 4) {
-      $totalP = $p1 + $p2 + $p3 + $p4 -1;
-      echo "$totalP";
-}
-  if ($num == 5) {
-    $totalP = $p1 + $p2 + $p3 + $p4 + $p5 -1;
-    echo "$totalP";
-}
-  if ($num == 6) {
-    $totalP = $p1 + $p2 + $p3 + $p4 + $p5 + $p6 -1;
-    echo "$totalP";
-}
-}
-    function vencedor($totalP, $totalJ){
-   if ($totalP == $totalJ){
-    echo "<h3>Empate</h3>";
- }
-     if ($totalP > $totalJ) {
-        echo "<h1>Computador Ganhou</h1>";
- }  
-     if ($totalP < $totalJ){
-     echo "<h2>$nome Ganhou</h2>";
-}
-}
+
+
 ?>
