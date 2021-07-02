@@ -102,17 +102,13 @@ $cartasp = sortear($num);
         echo "Soma da pontuação das cartas do computador: <br>";
         $totalP = somarp($p1, $p2, $p3, $p4, $p5, $p6); 
         
-
-      echo "<br><br><hr>Pontuação do computador e sua pontuação: <br>";
-      $totalP = somarp($p1, $p2, $p3, $p4, $p5, $p6); 
-      $totalJ = somar($h1, $h2, $h3, $h4, $h5, $h6);
       if ($totalJ > $totalP){
           echo "$totalP<h1><br>$nome, parabéns, você ganhou!</h1>";
       }
-      elseif($totalJ < $totalP){
+      if($totalJ < $totalP){
           echo "<h2><br>Que pena, você perdeu...</h2>";
       }
-      elseif($totalJ == $totalP){
+      if($totalJ == $totalP){
           echo "<h3><br>Empate.</h3>";
       }
         
