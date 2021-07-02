@@ -9,7 +9,6 @@ $naipe = isset($_POST['naipe']) ? $_POST['naipe'] : 1;
 $acao = isset($_POST['acao']) ? $_POST['acao'] : "";
 $cartas = sortear($num);
 $cartasp = sortear($num);
-
 ?>
 <html lang="pt-BR">
 <head>
@@ -76,9 +75,11 @@ $cartasp = sortear($num);
           echo "Carta 5: ".$h5."<br>";
         if ($h6 != 0)
           echo "Carta 6: ".$h6."<br>";
-        somar($cartas, $num, $h1, $h2, $h3, $h4, $h5, $h6);
-        echo "<br>";
-        echo "Computador <br>";
+
+         echo "Total da sua Pontuação:<br>";
+        somar($h1, $h2, $h3, $h4, $h5, $h6);
+       
+        echo " <br>Computador<br>";
 
         $p1 = isset($_POST['p1']) ? $_POST['p1'] : 0;
         $p2 = isset($_POST['p2']) ? $_POST['p2'] : 0;
@@ -100,7 +101,7 @@ $cartasp = sortear($num);
       if ($p6 != 0)
         echo "Carta 6: ".$p6."<br>";
         somarp($cartasp, $num, $p1, $p2, $p3, $p4, $p5, $p6);
-
+        vencedor($totalP, $totalJ);
       
 
       } elseif ($acao == 'sortear'){
