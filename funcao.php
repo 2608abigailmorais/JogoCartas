@@ -4,8 +4,10 @@ function sortear($num){
     $cartas = array();
     for ($x = 0; $x < $num; $x++){
         $n = rand(1,13);
-        // Verificar se o número já existe no array cartas
-        // Como? Verificar se o valor n já existe dentro do array cartas
+        if(in_array($n, $cartas)){
+            $cartas = array_diff($cartas, $cartas);
+            $x= 0;
+        }
         $cartas[] = $n;
     }
     sort($cartas);
@@ -23,7 +25,7 @@ function mostrarCartas($cartas,$naipe){
         echo "<h5>Espadas</h5>";
     echo "<table><tr>";
     foreach ($cartas as $c){
-        echo "<td>".$c."</td><td></td>"; 
+        echo "<td></td><td></td>"; 
         
     if ($c == 1 && $naipe == 1){
         echo "<img src='img/1ouro.png' width='100'>";
@@ -193,60 +195,58 @@ function mostrarCartas($cartas,$naipe){
 
 function somar($cartas, $num, $h1, $h2, $h3, $h4, $h5, $h6){
  if ($num == 2) {
-    $totalJ = $h1 + $h2;
+    $totalJ = $h1 + $h2 -1;
     echo "$totalJ";
 }
     if ($num == 3) {
-      $totalJ = $h1 + $h2 + $h3;
+      $totalJ = $h1 + $h2 + $h3 -1;
       echo "$totalJ";
 }  
     if ($num == 4) {
-      $totalJ = $h1 + $h2 + $h3 + $h4;
+      $totalJ = $h1 + $h2 + $h3 + $h4 -1;
       echo "$totalJ";
 }
   if ($num == 5) {
-    $totalJ = $h1 + $h2 + $h3 + $h4 + $h5;
+    $totalJ = $h1 + $h2 + $h3 + $h4 + $h5 -1;
     echo "$totalJ";
 }
   if ($num == 6) {
-    $totalJ = $h1 + $h2 + $h3 + $h4 + $h5 + $h6;
+    $totalJ = $h1 + $h2 + $h3 + $h4 + $h5 + $h6 -1;
     echo "$totalJ";
 }
 } 
 
 function somarp($cartasp, $num, $p1, $p2, $p3, $p4, $p5, $p6){
  if ($num == 2) {
-    $totalP = $p1 + $p2;
+    $totalP = $p1 + $p2 -1;
     echo "$totalP";
 }
     if ($num == 3) {
-      $totalP = $p1 + $p2 + $p3;
+      $totalP = $p1 + $p2 + $p3 -1;
       echo "$totalP";
 }  
     if ($num == 4) {
-      $totalP = $p1 + $p2 + $p3 + $p4;
+      $totalP = $p1 + $p2 + $p3 + $p4 -1;
       echo "$totalP";
 }
   if ($num == 5) {
-    $totalP = $p1 + $p2 + $p3 + $p4 + $p5;
+    $totalP = $p1 + $p2 + $p3 + $p4 + $p5 -1;
     echo "$totalP";
 }
   if ($num == 6) {
-    $totalP = $p1 + $p2 + $p3 + $p4 + $p5 + $p6;
+    $totalP = $p1 + $p2 + $p3 + $p4 + $p5 + $p6 -1;
     echo "$totalP";
 }
-}   return $totalP;
-    return $totalJ;
-
-    function($totalJ, $totalP){
-    if ($totalP == $totalJ){
-        echo "<h3>Empate</h3>";
+}
+    function vencedor($totalP, $totalJ){
+   if ($totalP == $totalJ){
+    echo "<h3>Empate</h3>";
  }
      if ($totalP > $totalJ) {
         echo "<h1>Computador Ganhou</h1>";
  }  
      if ($totalP < $totalJ){
-     echo "<h2>Usuário xxxx Ganhou</h2>";
+     echo "<h2>$nome Ganhou</h2>";
 }
 }
 ?>
