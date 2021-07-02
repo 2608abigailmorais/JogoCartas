@@ -55,14 +55,14 @@ $cartasp = sortear($num);
   </form>  
 <?php
     if ($acao == 'jogar'){
-    
+        
         $h1 = isset($_POST['h1']) ? $_POST['h1'] : 0;
         $h2 = isset($_POST['h2']) ? $_POST['h2'] : 0;
         $h3 = isset($_POST['h3']) ? $_POST['h3'] : 0;
         $h4 = isset($_POST['h4']) ? $_POST['h4'] : 0;
         $h5 = isset($_POST['h5']) ? $_POST['h5'] : 0;
         $h6 = isset($_POST['h6']) ? $_POST['h6'] : 0;
-  
+
         if ($h1 != 0)
           echo "Carta 1: ".$h1."<br>";
         if ($h2 != 0)
@@ -75,10 +75,9 @@ $cartasp = sortear($num);
           echo "Carta 5: ".$h5."<br>";
         if ($h6 != 0)
           echo "Carta 6: ".$h6."<br>";
-
-         echo "Total da sua Pontuação:<br>";
-        somar($h1, $h2, $h3, $h4, $h5, $h6);
-       
+        
+        echo "Soma da pontuação de suas cartas: <br>";
+        $totalJ = somar($h1, $h2, $h3, $h4, $h5, $h6);
         echo " <br>Computador<br>";
 
         $p1 = isset($_POST['p1']) ? $_POST['p1'] : 0;
@@ -100,11 +99,24 @@ $cartasp = sortear($num);
         echo "Carta 5: ".$p5."<br>";
       if ($p6 != 0)
         echo "Carta 6: ".$p6."<br>";
-        somarp($cartasp, $num, $p1, $p2, $p3, $p4, $p5, $p6);
-        vencedor($totalP, $totalJ);
-      
+        echo "Soma da pontuação das cartas do computador: <br>";
+        $totalP = somarp($p1, $p2, $p3, $p4, $p5, $p6); 
+        
 
-      } elseif ($acao == 'sortear'){
+      echo "<br><br><hr>Pontuação do computador e sua pontuação: <br>";
+      $totalP = somarp($p1, $p2, $p3, $p4, $p5, $p6); 
+      $totalJ = somar($h1, $h2, $h3, $h4, $h5, $h6);
+      if ($totalJ > $totalP){
+          echo "$totalP<h1><br>$nome, parabéns, você ganhou!</h1>";
+      }
+      elseif($totalJ < $totalP){
+          echo "<h2><br>Que pena, você perdeu...</h2>";
+      }
+      elseif($totalJ == $totalP){
+          echo "<h3><br>Empate.</h3>";
+      }
+        
+       }elseif ($acao == 'sortear'){
       mostrarCartas($cartas,$naipe);
     }
 
